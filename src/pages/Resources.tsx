@@ -332,7 +332,7 @@ const Resources = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-between pr-20">
                         <div className="flex items-center gap-1">
                           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
                             <MessageCircle className="h-4 w-4 mr-1" />
@@ -355,7 +355,7 @@ const Resources = () => {
                   </div>
 
                   {/* Contact Button - Bottom Right Corner */}
-                  <div className="absolute bottom-4 right-4">
+                  <div className="absolute bottom-6 right-6">
                     <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
                       <Mail className="h-4 w-4 mr-1" />
                       Contact
