@@ -332,8 +332,8 @@ const Resources = () => {
                       </div>
 
                       {/* Actions */}
-                      <div className="flex items-center justify-between pr-20">
-                        <div className="flex items-center gap-1">
+                      <div className="mt-2 flex items-center justify-between">
+                        <div className="flex items-center gap-1 flex-wrap">
                           <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
                             <MessageCircle className="h-4 w-4 mr-1" />
                             {post.comments}
@@ -350,17 +350,14 @@ const Resources = () => {
                             <Share className="h-4 w-4" />
                           </Button>
                         </div>
+                        <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground">
+                          <Mail className="h-4 w-4 mr-1" />
+                          Contact
+                        </Button>
                       </div>
                     </div>
                   </div>
 
-                  {/* Contact Button - Bottom Right Corner */}
-                  <div className="absolute bottom-6 right-6">
-                    <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
-                      <Mail className="h-4 w-4 mr-1" />
-                      Contact
-                    </Button>
-                  </div>
                 </Card>
               ))}
             </div>
