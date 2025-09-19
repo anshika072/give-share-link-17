@@ -43,8 +43,8 @@ All colors MUST be HSL.
     --button-gradient: linear-gradient(135deg, hsl(217 91% 60%), hsl(200 100% 70%));
     --stats-gradient: linear-gradient(180deg, hsl(217.2 32.6% 17.5%), hsl(222.2 84% 4.9%));
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --glow-primary: 0 0 40px hsl(217 91% 60% / 0.4);
-    --glow-accent: 0 0 30px hsl(200 100% 70% / 0.3);
+    --glow-primary: 0 0 15px hsl(217 91% 60% / 0.2);
+    --glow-accent: 0 0 12px hsl(200 100% 70% / 0.15);
 
     --radius: 0.5rem;
 
