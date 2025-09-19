@@ -1,4 +1,4 @@
-import { ArrowLeft, Heart, MessageCircle, Repeat, Share, MapPin, Clock, User, TrendingUp, UserPlus } from "lucide-react";
+import { ArrowLeft, Heart, MessageCircle, Repeat, Share, MapPin, Clock, User, TrendingUp, UserPlus, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
@@ -273,10 +273,10 @@ const Resources = () => {
 
           {/* Center Content */}
           <div className="flex-1 max-w-2xl">
-            <div className="divide-y divide-border">
+            <div className="space-y-6">
               {resourcePosts.map((post) => (
-                <div key={post.id} className="p-4 hover:bg-muted/30 transition-colors duration-200">
-                  <div className="flex gap-3">
+                <Card key={post.id} className="p-6 hover:shadow-lg transition-all duration-300 relative">
+                  <div className="flex gap-4">
                     {/* Avatar */}
                     <Avatar className="h-12 w-12 flex-shrink-0">
                       <AvatarImage src={post.user.avatar} />
@@ -284,7 +284,7 @@ const Resources = () => {
                     </Avatar>
 
                     {/* Content */}
-                    <div className="flex-1 space-y-3">
+                    <div className="flex-1 space-y-4">
                       {/* User Info */}
                       <div className="flex items-center gap-1 flex-wrap">
                         <span className="font-semibold hover:underline cursor-pointer">
@@ -303,7 +303,7 @@ const Resources = () => {
                       </div>
 
                       {/* Categories and Urgent Badge */}
-                      <div className="flex items-center gap-2 mb-2">
+                      <div className="flex items-center gap-2">
                         <Badge className={getCategoryColor(post.category)}>
                           {post.category}
                         </Badge>
@@ -320,38 +320,48 @@ const Resources = () => {
                       </p>
 
                       {/* Location and Availability */}
-                      <div className="space-y-1">
+                      <div className="bg-muted/30 rounded-lg p-3 space-y-2">
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <MapPin className="h-4 w-4 mr-1" />
+                          <MapPin className="h-4 w-4 mr-2 text-primary" />
                           {post.location}
                         </div>
                         <div className="flex items-center text-sm text-muted-foreground">
-                          <Clock className="h-4 w-4 mr-1" />
-                          Available: <span className="text-primary ml-1">{post.availability}</span>
+                          <Clock className="h-4 w-4 mr-2 text-primary" />
+                          Available: <span className="text-primary ml-1 font-medium">{post.availability}</span>
                         </div>
                       </div>
 
                       {/* Actions */}
-                      <div className="flex items-center justify-between max-w-md pt-2">
-                        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
-                          <MessageCircle className="h-4 w-4 mr-1" />
-                          {post.comments}
-                        </Button>
-                        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-green-500">
-                          <Repeat className="h-4 w-4 mr-1" />
-                          {post.shares}
-                        </Button>
-                        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-red-500">
-                          <Heart className="h-4 w-4 mr-1" />
-                          {post.likes}
-                        </Button>
-                        <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
-                          <Share className="h-4 w-4" />
-                        </Button>
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1">
+                          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
+                            <MessageCircle className="h-4 w-4 mr-1" />
+                            {post.comments}
+                          </Button>
+                          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-green-500">
+                            <Repeat className="h-4 w-4 mr-1" />
+                            {post.shares}
+                          </Button>
+                          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-red-500">
+                            <Heart className="h-4 w-4 mr-1" />
+                            {post.likes}
+                          </Button>
+                          <Button variant="ghost" size="sm" className="text-muted-foreground hover:text-primary">
+                            <Share className="h-4 w-4" />
+                          </Button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+
+                  {/* Contact Button - Bottom Right Corner */}
+                  <div className="absolute bottom-4 right-4">
+                    <Button size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg">
+                      <Mail className="h-4 w-4 mr-1" />
+                      Contact
+                    </Button>
+                  </div>
+                </Card>
               ))}
             </div>
 
